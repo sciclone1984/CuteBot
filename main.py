@@ -8,27 +8,27 @@ animals = {
   "hyena":"yeen",
   "bunny":"bun",
   "capybara":"capy",
-  "painted-dog":"chi", # name not found in keys
+  "painted-dog":"chi",
   "deer":"deer",
   "jaguar":"jaguar",
   "lion":"leo",
-  "maned-wolf":"mane", # name not found in keys
+  "maned-wolf":"mane", 
   "otter":"otter",
-  "pine-marten":"marten", # name not found in keys
+  "pine-marten":"marten", 
   "oppossum":"poss",
   "puma":"puma",
   "raccoon":"racc",
   "skunk":"skunk",
   "snake":"snek",
-  "snow-leopard":"snep", # name not found in keys
+  "snow-leopard":"snep", 
   "tiger":"tig",
-  "red panda":"wah", # name not found in keys
+  "red panda":"wah", 
   "wolf":"woof",
   "coyote":"yote",
   "dog":"dog",
   "bear":"bear",
   "serval":"serval",
-  "shiba-inu":"shiba" # name not found in keys
+  "shiba-inu":"shiba" 
 }
 
 client = commands.Bot(command_prefix="!")
@@ -37,6 +37,7 @@ client = commands.Bot(command_prefix="!")
 
 !random""")
 async def rand(ctx):
+  # randomly selects a key from the list of animals and returns an image link
   await ctx.message.reply(request(random.choice(list(animals.values()))))
  
 
@@ -74,10 +75,11 @@ async def picture(ctx, animal):
   if not animal:
     await ctx.message.reply("Please specify the name of an animal. A full list of animals can be found by running `!help picture`")
     return
-  input = animal.lower()
+  input = animal.lower() # make input lowercase to match keys
   if input not in animals.keys():
     await ctx.message.reply("Invalid animal name, did you mispell it? Remember that the animal names are case-insesitive.")
     return
+  # returns an image link of the specified animal
   await ctx.message.reply(request(animals[input]))
   
 
@@ -90,6 +92,6 @@ def request(animal):
   return "https://tinyfox.dev" + data["loc"]
 
 
-keep_alive()
-bot_secret = os.environ['DISCORD_TOKEN']
-client.run(bot_secret)
+keep_alive() # small website to keep bot alive
+bot_secret = os.environ['DISCORD_TOKEN'] # setup bot with auth token
+client.run(bot_secret) # run bot
