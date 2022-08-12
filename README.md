@@ -38,6 +38,7 @@ List of animals (case insenitive, hyphens are mandatory):
 
 ### !random
 Randomly selects an animal and displays a picture. Example:
+
 ```!random```
 
 ## FAQ
