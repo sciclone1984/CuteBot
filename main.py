@@ -22,7 +22,7 @@ animals = {
   "snake":"snek",
   "snow-leopard":"snep", 
   "tiger":"tig",
-  "red panda":"wah", 
+  "red-panda":"wah", 
   "wolf":"woof",
   "coyote":"yote",
   "dog":"dog",
@@ -63,7 +63,7 @@ List of animals (case insenitive, hyphens are mandatory):
 - Pine-Marten
 - Puma
 - Raccoon
-- Red Panda
+- Red-Panda
 - Skunk
 - Serval
 - Shiba-Inu
